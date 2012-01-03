@@ -43,9 +43,10 @@ class Player
     end
   end
 
-  def hit_by?(balls)
-    balls.any? {|ball| Gosu::distance(@x, @y, ball.x, ball.y) < 50}
+  def hit_by?(ball)
+    Gosu::distance(@x, @y, ball.x, ball.y) < 50
   end
-  
-  
+    def hit_by?(knife)
+    Gosu::distance(@x, @y, knife.x, knife.y) < 40
+end
 end
